@@ -43,7 +43,7 @@ app.post('/delete/:id', (req, res) => {
     if (err) throw err;
     console.log('works');
   })
-  // console.log(articles);
+  console.log(articles);
   res.redirect('/')
 })
 
