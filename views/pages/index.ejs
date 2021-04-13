@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body>
+  <%- include('../partials/header.ejs')  %>
+  <main>
+    <section id="hero">
+      <div>
+        <img src="/hero.png" alt="">
+      </div>
+      <h2>A few words about this blog platform, Ghost, and how this site was made</h2>
+      <span id="line"></span>
+    </section>
+    <h2 id="article-title">All Articles</h2>
+    <section id="articles">
+      <% articles.forEach(element => { %>
+
+      <figure>
+        <a href=<%= `/article/${element.id}` %>>
+          <img src=<%= element.url %> alt="">
+        </a>
+        <figcaption>
+          <p><%= element.title %> </p>
+        </figcaption>
+      </figure>
+      <% }) %>
+      <img src="/" alt="">
+    </section>
+  </main>
+  <%- include('../partials/footer.ejs')  %>
+  <script src="/main.js"></script>
+</body>
+
+</html>
